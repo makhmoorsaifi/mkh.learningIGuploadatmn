@@ -4,9 +4,7 @@ name: Reel Pipeline
 # queue, assigns schedule slots, and publishes whichever reel is due.
 # Change the cron below if you change reels_per_day / posting_times.
 on:
-  schedule:
-    - cron: "5 * * * *"
-  workflow_dispatch:    # lets you trigger a run manually from the Actions tab
+  workflow_dispatch:    # triggered hourly by cron-job.org
 concurrency:
   group: reel-pipeline
   cancel-in-progress: false   # never cut off a run that's mid-publish
